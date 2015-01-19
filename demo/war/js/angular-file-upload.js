@@ -183,6 +183,7 @@ function handleFileSelect(scope, elem, attr, ngModel, $parse, $timeout, $compile
 		var fileElem = angular.element('<input type="file">')
 		if (attr['multiple']) fileElem.attr('multiple', attr['multiple']);
 		if (attr['accept']) fileElem.attr('accept', attr['accept']);
+		if (attr['capture']) fileElem.attr('capture', attr['capture']);
 		fileElem.css('width', '1px').css('height', '1px').css('opacity', 0).css('position', 'absolute').css('filter', 'alpha(opacity=0)')
 				.css('padding', 0).css('margin', 0).css('overflow', 'hidden').attr('tabindex', '-1').attr('ng-file-generated-elem', true);
 		elem.append(fileElem);

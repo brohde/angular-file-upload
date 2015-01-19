@@ -47,9 +47,17 @@ app.controller('MyCtrl', [ '$scope', '$http', '$timeout', '$compile', '$upload',
 					var fileReader = new FileReader();
 					fileReader.readAsDataURL(file);
 					fileReader.onload = function(e) {
+						console.log('fileReader.onload', e);
 						$timeout(function() {
+							console.log('e.target.result', e.target.result);
 							file.dataUrl = e.target.result;
+
+							$scope.picFileSrc = e.target.result;
 						});
+						$scope.$apply(function() {
+							
+						});
+
 					}
 				});
 			}
